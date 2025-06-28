@@ -1,0 +1,46 @@
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+matches_data:
+ type: pandas.CSVDataset
+ filepath: data/01_raw/matches_data.csv
+matches_statistics:
+ type: pandas.CSVDataset
+ filepath: data/01_raw/match_statistics.csv
+
+matches_data_standardized:
+ type: pandas.CSVDataset
+ filepath: data/02_standardized/matches_data_standardized.csv
+matches_statistics_standardized:
+    type: pandas.CSVDataset
+    filepath: data/02_standardized/match_statistics_standardized.csv
+matches_data_time_standardized:
+    type: pandas.CSVDataset
+    filepath: data/02_standardized/matches_data_time_standardized.csv
+
+matches_data_merged:
+ type: pandas.CSVDataset
+ filepath: data/03_joined/matches_data_merged.csv
+matches_statistics_separated:
+ type: pandas.CSVDataset
+ filepath: data/04_separated_statistics/matches_statistics_separated.csv
+matches_results_separated:
+ type: pandas.CSVDataset
+ filepath: data/04_separated_statistics/matches_results_separated.csv
+
+prepared_goals_data:
+    type: pandas.CSVDataset
+    filepath: data/05_final_data/prepared_goals_data.csv
+goals_features_data:
+    type: pandas.CSVDataset
+    filepath: data/05_final_data/goals_features_data.csv
+
+trained_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/automl_model.pkl
+
+empty_output:
+    type: pandas.CSVDataset
+    filepath: data/07_output/empty_output.csv
